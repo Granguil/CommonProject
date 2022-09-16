@@ -5,7 +5,7 @@ export default class CarteMain extends Carte {
   constructor(nom, points, effet, typeEffet, type, img) {
     super(nom, points, effet, typeEffet, type);
 
-    this.image = "/img/" + img;
+    this.image = "/image/" + img;
   }
 
   liste() {
