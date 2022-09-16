@@ -1,30 +1,51 @@
-header{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 100px;
-    background-color: red;
-    align-items: center;
-}
-
-header nav{
-    width: 35%;
-    display: flex;
+.container{
+    display:flex;
     justify-content: space-evenly;
-    align-items: center;
+    margin:1% 10%;
+    height: 350px;
 }
 
-header > div{
-    color:darkred;
+#plateau{
+    background-color: lightgray;
 }
 
-body{
-    margin:0;
+#main{
+    background-color: lightsalmon;
+}
+
+h2, h4, h5{
     text-align: center;
 }
 
-.stat{
-    border-bottom: 2px solid red;
+.carte{
+    width:150px;
+    height:300px;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    text-align: center;
+    margin-top:10px;
+    border-radius:20px;
+}
+
+#main .carte{
+    cursor: pointer;
+}
+
+#carteSelect{
+    border:solid red 10px;
+}
+
+#score{
+    margin:0 10%;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+#score span{
+    width:150px;
+}
+
+img{
+    height: 150px;
 }

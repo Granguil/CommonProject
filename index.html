@@ -1,34 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Common Project</title>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="index.css"></link>
 </head>
 <body>
-    <header>
-        <nav>
-            <div id="home">Accueil</div>
-            <div id="challenge">Défi</div>
-        </nav>
-        <div>
-            <h2>Team's Maker</h2>
-        </div>
-        <nav>
-            <div id="shop">Boutique</div>
-            <div id="bonus">Bonus</div>
-        </nav>
-    </header>
-    <div class="stat">
-        <span>Niveau : <span class="level">0</span></span>
-        <span>Expérience : <span class="experience">0</span>/<span class="experienceNext">0</span></span>
-        <span>Argent : <span class="money">0</span></span>
-        <span>Bonus : <span class="bonus">0</span></span>
+    <h2></h2>
+    <h5></h5>
+    <div id="score"></div>
+    <div id="plateau" class="container">
+        <h4>Plateau</h4>
     </div>
-    <h3>Bienvenue sur le créateur d'équipe de Granguil !</h3>
-    <button>Commencer le Jeu !</button>
-    <script type="module" src="index.mjs"></script>
+    <div id="main" class="container">
+        <h4>Votre Main</h4>
+    </div>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="app/main.js" type="module"></script>
 </body>
 </html>
