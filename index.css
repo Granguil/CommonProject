@@ -40,6 +40,42 @@ h2, h4, h5{
     margin:0 10%;
     display:flex;
     justify-content: space-evenly;
+<<<<<<< HEAD
+    text-align: center;
+    margin-top:10px;
+    border-radius:20px;
+}
+
+#main .carte, .pointer{
+    cursor: pointer;
+}
+
+#carteSelect{
+    border:solid red 10px;
+}
+
+#score{
+    margin:0 10%;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+#score span{
+    width:150px;
+}
+
+img{
+    height: 150px;
+}
+
+.d-block{
+    display: block;
+=======
+>>>>>>> 754759b (test)
+}
+
+.d-none{
+    display: none;
 }
 
 #score span{
