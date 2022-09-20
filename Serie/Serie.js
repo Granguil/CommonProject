@@ -94,13 +94,21 @@ export default class Serie {
     let nom = document.createElement("span");
     nom.textContent = carte.nom;
     let img = document.createElement("img");
-    img.src = carte.image;
+    let isExisting = false;
+    fetch(carte.image).then(response=>response.blob()).then(
+      data=>{
+        isExisting=true;
+        img.src = carte.image;
+      }
+    )
     let type = document.createElement("span");
     type.textContent = carte.type;
     let points = document.createElement("span");
     points.textContent = "Points : " + carte.points;
     div.appendChild(nom);
-    div.appendChild(img);
+    if(isExisting){
+      div.appendChild(img);
+    }
     div.appendChild(type);
     div.appendChild(points);
 
@@ -113,7 +121,13 @@ export default class Serie {
     let nom = document.createElement("span");
     nom.textContent = carte.nom;
     let img = document.createElement("img");
-    img.src = carte.image;
+    let isExisting = false;
+    fetch(carte.image).then(response=>response.blob()).then(
+      data=>{
+        isExisting=true;
+        img.src = carte.image;
+      }
+    )
     let type = document.createElement("span");
     type.textContent = carte.type;
     let points = document.createElement("span");
@@ -125,7 +139,9 @@ export default class Serie {
       points.classList.add("d-none");
     }
     div.appendChild(nom);
-    div.appendChild(img);
+    if(isExisting){
+      div.appendChild(img);
+    }
     div.appendChild(type);
     div.appendChild(points);
   }
