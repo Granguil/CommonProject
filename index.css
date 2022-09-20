@@ -28,7 +28,7 @@ h2, h4, h5{
     border-radius:20px;
 }
 
-#main .carte{
+#main .carte, .pointer{
     cursor: pointer;
 }
 
@@ -48,4 +48,12 @@ h2, h4, h5{
 
 img{
     height: 150px;
+}
+
+.d-block{
+    display: block;
+}
+
+.d-none{
+    display: none;
 }
