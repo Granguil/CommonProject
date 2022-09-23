@@ -1,3 +1,4 @@
+import { config } from "../config/config.js";
 import CarteMain from "./CarteMain.js";
 import CartePlateau from "./CartePlateau.js";
 
@@ -93,9 +94,8 @@ export default class Serie {
     div.style.color = carte.couleur[1];
     let nom = document.createElement("span");
     nom.textContent = carte.nom;
-    if (carte.image != undefined) {
+    if (carte.image != undefined  && config.withImage) {
       fetch(carte.image)
-        .catch(() => console.log("Fail"))
         .then((response) => {
         if(response.status=="200"){
           return response.blob()
@@ -106,7 +106,7 @@ export default class Serie {
           let img = document.createElement("img");
           img.src = carte.image;
           div.appendChild(img);
-        });
+        }).catch(() => console.log("Fail"));
     }
     let type = document.createElement("span");
     type.textContent = carte.type;
@@ -125,9 +125,8 @@ export default class Serie {
     let nom = document.createElement("span");
     nom.textContent = carte.nom;
     let img = document.createElement("img");
-    if (carte.image != undefined) {
+    if (carte.image != undefined && config.withImage) {
       fetch(carte.image)
-        .catch(() => console.log("Fail"))
         .then((response) => {
         if(response.status=="200"){
           return response.blob()
@@ -137,7 +136,7 @@ export default class Serie {
         .then((data) => {
           img.src = carte.image;
           div.appendChild(img);
-        });
+        }).catch(() => console.log("Fail"));
     }
     let type = document.createElement("span");
     type.textContent = carte.type;
