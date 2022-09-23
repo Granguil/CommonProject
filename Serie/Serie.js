@@ -95,12 +95,14 @@ export default class Serie {
     nom.textContent = carte.nom;
     let img = document.createElement("img");
     let isExisting = false;
-    fetch(carte.image).then(response=>response.blob()).then(
-      data=>{
-        isExisting=true;
-        img.src = carte.image;
-      }
-    )
+    if(carte.image!=undefined){
+      fetch(carte.image).then(response=>response.blob()).then(
+        data=>{
+          isExisting=true;
+          img.src = carte.image;
+        }
+      )
+    }
     let type = document.createElement("span");
     type.textContent = carte.type;
     let points = document.createElement("span");
@@ -122,12 +124,14 @@ export default class Serie {
     nom.textContent = carte.nom;
     let img = document.createElement("img");
     let isExisting = false;
-    fetch(carte.image).then(response=>response.blob()).then(
-      data=>{
-        isExisting=true;
-        img.src = carte.image;
-      }
-    )
+    if(carte.image!=undefined){
+      fetch(carte.image).then(response=>response.blob()).then(
+        data=>{
+          isExisting=true;
+          img.src = carte.image;
+        }
+      )
+    }
     let type = document.createElement("span");
     type.textContent = carte.type;
     let points = document.createElement("span");
