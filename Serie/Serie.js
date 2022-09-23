@@ -93,24 +93,21 @@ export default class Serie {
     div.style.color = carte.couleur[1];
     let nom = document.createElement("span");
     nom.textContent = carte.nom;
-    let img = document.createElement("img");
-    let isExisting = false;
-    if(carte.image!=undefined){
-      fetch(carte.image).then(response=>response.blob()).then(
-        data=>{
-          isExisting=true;
+    if (carte.image != undefined) {
+      fetch(carte.image)
+        .then((response) => response.blob())
+        .then((data) => {
+          let img = document.createElement("img");
           img.src = carte.image;
-        }
-      )
+          div.appendChild(img);
+        })
+        .catch(() => console.log("Fail"));
     }
     let type = document.createElement("span");
     type.textContent = carte.type;
     let points = document.createElement("span");
     points.textContent = "Points : " + carte.points;
     div.appendChild(nom);
-    if(isExisting){
-      div.appendChild(img);
-    }
     div.appendChild(type);
     div.appendChild(points);
 
@@ -123,14 +120,14 @@ export default class Serie {
     let nom = document.createElement("span");
     nom.textContent = carte.nom;
     let img = document.createElement("img");
-    let isExisting = false;
-    if(carte.image!=undefined){
-      fetch(carte.image).then(response=>response.blob()).then(
-        data=>{
-          isExisting=true;
+    if (carte.image != undefined) {
+      fetch(carte.image)
+        .then((response) => response.blob())
+        .then((data) => {
           img.src = carte.image;
-        }
-      )
+          div.appendChild(img);
+        })
+        .catch(() => console.log("Fail"));
     }
     let type = document.createElement("span");
     type.textContent = carte.type;
@@ -141,11 +138,9 @@ export default class Serie {
       nom.classList.add("d-none");
       type.classList.add("d-none");
       points.classList.add("d-none");
+      img.classList.add("d-none");
     }
     div.appendChild(nom);
-    if(isExisting){
-      div.appendChild(img);
-    }
     div.appendChild(type);
     div.appendChild(points);
   }
