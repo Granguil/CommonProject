@@ -95,13 +95,18 @@ export default class Serie {
     nom.textContent = carte.nom;
     if (carte.image != undefined) {
       fetch(carte.image)
-        .then((response) => response.blob())
+        .catch(() => console.log("Fail"))
+        .then((response) => {
+        if(response.status=="200"){
+          return response.blob()
+        }else{
+          throw "Fail";
+        }})
         .then((data) => {
           let img = document.createElement("img");
           img.src = carte.image;
           div.appendChild(img);
-        })
-        .catch(() => console.log("Fail"));
+        });
     }
     let type = document.createElement("span");
     type.textContent = carte.type;
@@ -122,12 +127,17 @@ export default class Serie {
     let img = document.createElement("img");
     if (carte.image != undefined) {
       fetch(carte.image)
-        .then((response) => response.blob())
+        .catch(() => console.log("Fail"))
+        .then((response) => {
+        if(response.status=="200"){
+          return response.blob()
+        }else{
+          throw "Fail";
+        }})
         .then((data) => {
           img.src = carte.image;
           div.appendChild(img);
-        })
-        .catch(() => console.log("Fail"));
+        });
     }
     let type = document.createElement("span");
     type.textContent = carte.type;
