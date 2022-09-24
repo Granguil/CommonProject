@@ -1,5 +1,3 @@
-import Carte from "./CarteMain.js";
-
 export default class CartePlateau {
   constructor(nom, points, effet, typeEffet, type) {
     this.nom = nom;

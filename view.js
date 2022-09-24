@@ -30,14 +30,14 @@ export default class View {
         scores[i].textContent = "Score n°" + i + " : " + this.score[i - 1];
       }
       scores[0].textContent = "Totale : " + this.points;
-      document
-        .querySelector("#CP" + this.carteJoue.length + " span")
-        .css("display", "block");
+      document.querySelector(
+        "#CP" + this.carteJoue.length + " span"
+      ).style.display = "block";
       if (this.carteJoue.length == 5) {
         alert("Votre Score est de " + this.points + " points.");
         const cartes = document.querySelectorAll("#main .carte");
         for (const c of cartes) {
-          c.removeEventListener();
+          c.addEventListener("click", () => {});
         }
       }
     }
