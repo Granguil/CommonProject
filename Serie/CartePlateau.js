@@ -1,5 +1,5 @@
 import Carte from "../classe/CartePlateau.js";
-import Association from "../effet/Association.js";
+import Association from "../effet/association.js";
 
 export default class CartePlateau extends Carte {
   constructor(nom, points, effet, typeEffet, type, image) {
