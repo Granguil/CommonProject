@@ -1,11 +1,13 @@
-export default class BonusVoisin{
+import Effet from "../classe/Effet.js";
+
+export default class BonusVoisin extends Effet{
     constructor(pointDeBase,bonus,type){
-        this.pointDeBase=Number(pointDeBase);
+        super(pointDeBase);
         this.bonus=bonus;
         this.type=type;
     }
 
-    comptePoints(cartesJ,cartes,index,score){
+    comptePoints(index,score,cartes){
         score[index-1]+=this.pointDeBase;
         let debut;
         if(index>1){

@@ -3,7 +3,7 @@ import View from "./../view.js";
 
 function selectionTheme() {
   let alea = Math.floor(Math.random() * app.sujets.length);
-  //alea=0;
+  alea=0;
   app.themeJeu = app.sujets[alea][0];
   document.getElementById("theme").textContent = app.themeJeu;
   document.getElementById("objectif").textContent =

@@ -1,10 +1,5 @@
-export default class AucunEffet{
-    constructor(pointsDeBase){
-        this.pointsDeBase=pointsDeBase;
-    }
+import Effet from "../classe/Effet.js";
 
-    comptePoints(cartesJ,cartes,index,score,cartesMain){
-        score[index-1]+=this.pointsDeBase;
-        return score;
-    }
+export default class AucunEffet extends Effet{
+    
 }

@@ -1,19 +1,21 @@
-export default class MultiAction {
+import Effet from "../classe/Effet.js";
+
+export default class MultiAction extends Effet {
   constructor(pointDeBase, type, action) {
-    this.pointDeBase = Number(pointDeBase);
+    super(pointDeBase);
     this.type = type;
     this.action = action;
   }
 
-  comptePoints(cartesJ, cartes, index, score, main) {
+  comptePoints(index,score,cartes, cartesJ, main) {
     score[index - 1] += this.pointDeBase;
     for (let i = 0; i < this.type.length; i++) {
       if (cartesJ[index - 1].type == this.type[i]) {
         score = this.action[i].comptePoints(
-          cartesJ,
-          cartes,
           index,
           score,
+          cartes,
+          cartesJ,
           main
         );
       }

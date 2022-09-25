@@ -1,13 +1,15 @@
-export default class Imitation{
+import Effet from "../classe/Effet.js";
+
+export default class Imitation extends Effet{
     constructor(pointDeBase,carteCopiee){
-        this.pointDeBase=pointDeBase;
+        super(pointDeBase);
         this.carte=carteCopiee;
     }
 
-    comptePoints(cartesJ,cartes,index,score,cartesMain){
+    comptePoints(index,score,cartes,cartesJ,cartesMain){
         if(index>1){
         cartesJ[index-1]=cartesJ[index-2];
-        score=cartesJ[index-1].typeEffet.comptePoints(cartesJ,cartes,index,score,cartesMain);
+        score=cartesJ[index-1].typeEffet.comptePoints(index,score,cartes,cartesJ,cartesMain);
         }
         return score;
     }

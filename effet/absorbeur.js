@@ -1,13 +1,10 @@
-export default class Absorbeur{
-    constructor(pointDeBase){
-        this.pointDeBase=Number(pointDeBase);
-        
-    }
+import Effet from "../classe/Effet.js";
 
-    comptePoints(cartesJ,cartes,index,score){
+export default class Absorbeur extends Effet{
+    
+    comptePoints(index,score,cartes,cartesJ){
         this.pointDeBase=cartesJ[index-1].typeEffet.pointDeBase;
         score[index-1]+=this.pointDeBase;
-               
         return score;
     }
 }

@@ -1,9 +1,8 @@
-export default class ZeroPoint{
-    constructor(){
-        
-    }
+import Effet from "../classe/Effet.js";
 
-    comptePoints(cartesJ,cartes,index,score,cartesMain){
+export default class ZeroPoint extends Effet{
+
+    comptePoints(index,score){
         score[index-1]=0;
         return score;
     }

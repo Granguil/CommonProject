@@ -1,10 +1,12 @@
-export default class bonusSimple{
+import Effet from "../classe/Effet.js";
+
+export default class Association extends Effet{
     constructor(pointDeBase,numero){
-        this.pointDeBase=Number(pointDeBase);
+        super(pointDeBase);
         this.numero=numero;
     }
 
-    comptePoints(cartesJ,cartes,index,score){
+    comptePoints(index,score,cartes){
         if(this.numero==cartes[index-1].typeEffet.numero){
         score[index-1]+=this.pointDeBase;
         }

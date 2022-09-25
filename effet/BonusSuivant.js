@@ -1,12 +1,14 @@
-export default class BonusSuivant{
+import Effet from "../classe/Effet.js";
+
+export default class BonusSuivant extends Effet{
     constructor(pointDeBase,bonusSuivant,decalage){
-        this.pointDeBase=Number(pointDeBase);
+        super(pointDeBase);
         this.decalage=decalage;
         this.bonusSuivant=bonusSuivant;
         this.index=0;
     }
 
-    comptePoints(cartesJ,cartes,index,score){
+    comptePoints(index,score){
         this.decalage=index+this.decalage;
         this.index=index;
         score[index-1]+=this.pointDeBase;

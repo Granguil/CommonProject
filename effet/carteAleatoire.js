@@ -1,10 +1,12 @@
-export default class CarteAleatoire{
+import Effet from "../classe/Effet.js";
+
+export default class CarteAleatoire extends Effet{
     constructor(pointDeBase){
-        this.pointDeBase=pointDeBase;
+        super(pointDeBase);
         this.actionAutomatique=true;
     }
 
-    comptePoints(cartesJ,cartes,index,score,cartesMain){
+    comptePoints(index,score,cartes,cartesJ,cartesMain){
        let alea=Math.floor(Math.random()*cartesMain.length);
         cartesJ.push(cartesMain[alea]);
         cartesMain.splice(alea,1);

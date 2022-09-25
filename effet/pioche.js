@@ -1,14 +1,15 @@
+import Effet from "../classe/Effet.js";
 import CarteMain from "../Magie/carteMain.js";
 import Magie from "../Magie/Magie.js";
 
-export default class Pioche{
+export default class Pioche extends Effet{
     constructor(pointDeBase,type){
-        this.pointDeBase=pointDeBase;
+        super(pointDeBase);
         this.type=type;
         
     }
 
-    comptePoints(cartesJ,cartes,index,score,cartesMain){
+    comptePoints(index,score,cartes,cartesJ,cartesMain){
         if(this.type==cartes[index-1].type){
             let carte=new CarteMain().getCarte()
             carte.couleur=new Magie().getCouleur(carte.type);

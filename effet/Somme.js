@@ -1,10 +1,12 @@
-export default class Somme{
+import Effet from "../classe/Effet.js";
+
+export default class Somme extends Effet{
     constructor(pointDeBase){
-        this.pointDeBase=Number(pointDeBase);
+        super(pointDeBase);
         
     }
 
-    comptePoints(cartesJ,cartes,index,score){
+    comptePoints(index,score){
         
         if(score[index-1]==0){
             score[index-1]+=this.pointDeBase;

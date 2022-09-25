@@ -1,12 +1,14 @@
-export default class bonusMain{
+import Effet from "../classe/Effet.js";
+
+export default class BonusMain extends Effet{
     constructor(pointDeBase,bonus,type,condition){
-        this.pointDeBase=Number(pointDeBase);
+        super(pointDeBase);
         this.bonus=bonus;
         this.type=type;
         this.condition=condition;
     }
 
-    comptePoints(cartesJ,cartes,index,score,cartesMain){
+    comptePoints(index,score,cartes,cartesJ,cartesMain){
         score[index-1]+=this.pointDeBase;
         if(cartes[index-1].type==this.condition){
             for(let i=0;i<this.type.length;i++){

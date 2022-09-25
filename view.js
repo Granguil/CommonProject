@@ -6,22 +6,22 @@ export default class View {
     this.carteJoue = new Array();
     this.points = 0;
     this.score = this.theme.getFormatScore();
-
-    while (this.cartePlateau[0].typeEffet.hasOwnProperty("actionAutomatique")) {
-      this.score = this.cartePlateau[0].typeEffet.comptePoints(
-        this.carteJoue,
-        this.cartePlateau,
+    let j=0;
+    while (this.cartePlateau[j].typeEffet.hasOwnProperty("actionAutomatique")) {
+      this.score = this.cartePlateau[j].typeEffet.comptePoints(
         this.carteJoue.length,
         this.score,
+        this.cartePlateau,
+        this.carteJoue,
         this.carteMain,
         this.cartePlateau
       );
 
-      this.score = this.carteJoue[0].typeEffet.comptePoints(
-        this.carteJoue,
-        this.cartePlateau,
+      this.score = this.carteJoue[j].typeEffet.comptePoints(
         this.carteJoue.length,
         this.score,
+        this.cartePlateau,
+        this.carteJoue,
         this.carteMain,
         this.cartePlateau
       );
@@ -30,9 +30,9 @@ export default class View {
         scores[i].textContent = "Score n°" + i + " : " + this.score[i - 1];
       }
       scores[0].textContent = "Totale : " + this.points;
-      document.querySelector(
+      /*document.querySelector(
         "#CP" + this.carteJoue.length + " span"
-      ).style.display = "block";
+      ).style.display = "block";*/
       if (this.carteJoue.length == 5) {
         alert("Votre Score est de " + this.points + " points.");
         const cartes = document.querySelectorAll("#main .carte");
@@ -40,6 +40,7 @@ export default class View {
           c.addEventListener("click", () => {});
         }
       }
+      j++;
     }
     this.affichageMain();
     this.affichagePlateau();
@@ -67,10 +68,10 @@ export default class View {
           that.score = that.carteJoue[
             that.carteJoue.length - 1
           ].typeEffet.comptePoints(
-            that.carteJoue,
-            that.cartePlateau,
             that.carteJoue.length,
             that.score,
+            that.cartePlateau,
+            that.carteJoue,
             that.carteMain,
             that.cartePlateau
           );
@@ -78,10 +79,10 @@ export default class View {
           that.score = that.cartePlateau[
             that.carteJoue.length - 1
           ].typeEffet.comptePoints(
-            that.carteJoue,
-            that.carteJoue,
             that.carteJoue.length,
             that.score,
+            that.carteJoue,
+            that.carteJoue,
             that.carteMain,
             that.cartePlateau
           );
@@ -94,10 +95,10 @@ export default class View {
                 that.score = that.carteJoue[
                   i
                 ].typeEffet.bonusSuivant.comptePoints(
-                  that.carteJoue,
-                  that.cartePlateau,
                   that.carteJoue.length,
                   that.score,
+                  that.cartePlateau,
+                  that.carteJoue,
                   that.carteMain,
                   that.cartePlateau
                 );
@@ -114,10 +115,10 @@ export default class View {
               that.score = that.carteJoue[
                 that.carteJoue.length - 1
               ].typeEffet.comptePoints(
-                that.carteJoue,
-                that.cartePlateau,
                 that.carteJoue.length,
                 that.score,
+                that.cartePlateau,
+                that.carteJoue,
                 that.carteMain,
                 that.cartePlateau
               );
@@ -133,10 +134,10 @@ export default class View {
                     that.score = that.carteJoue[
                       i
                     ].typeEffet.bonusSuivant.comptePoints(
-                      that.carteJoue,
-                      that.cartePlateau,
                       that.carteJoue.length,
                       that.score,
+                      that.cartePlateau,
+                      that.carteJoue,
                       that.carteMain,
                       that.cartePlateau
                     );
@@ -147,10 +148,10 @@ export default class View {
               that.score = that.cartePlateau[
                 that.carteJoue.length
               ].typeEffet.comptePoints(
-                that.carteJoue,
-                that.cartePlateau,
                 that.carteJoue.length,
                 that.score,
+                that.cartePlateau,
+                that.carteJoue,
                 that.carteMain,
                 that.cartePlateau
               );
